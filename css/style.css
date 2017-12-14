@@ -1,0 +1,12 @@
+.column {
+  float: left;
+  margin: 0 10px; }
+  .column .column-card-list {
+    list-style: none;
+    min-height: 50px;
+    padding: 0; }
+    .column .column-card-list .card button {
+      float: left;
+      margin-right: 10px; }
+
+/*# sourceMappingURL=style.css.map */

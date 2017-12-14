@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,OAAO;EACN,KAAK,EAAC,IAAI;EACV,MAAM,EAAC,MAAM;EACb,yBAAiB;IAChB,UAAU,EAAC,IAAI;IACf,UAAU,EAAC,IAAI;IACf,OAAO,EAAC,CAAC;IACT,sCAAY;MACX,KAAK,EAAC,IAAI;MACV,YAAY,EAAC,IAAI",
+"sources": ["../../../Modu%C5%8211/11.6/css/style.scss"],
+"names": [],
+"file": "style.css"
+}

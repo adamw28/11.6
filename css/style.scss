@@ -1,0 +1,13 @@
+.column{
+	float:left;
+	margin:0 10px;
+	.column-card-list{
+		list-style:none;
+		min-height:50px;
+		padding:0;
+		.card button{
+			float:left;
+			margin-right:10px;
+		}
+	}
+}
