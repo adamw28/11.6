@@ -9,18 +9,18 @@ $(function(){
 	}
 	function Board(name){
 		var self = this;
-    	this.name = name;
+    	this.name = name;console.log(self.name);
     	this.$element = createBoard();
 		function createBoard() {
     		var $board = $('<div>').addClass('board');
 			var $boardTitle = $('<h2>').addClass('board-title').text(self.name);
-			var $boardColumnList = $('<ul>').addClass('board-card-list');
+			var $boardColumnList = $('<ul>').addClass('board-column-list');
 			var $boardDelete = $('<button>').addClass('btn-delete').text('x');
 			var $boardAddColumn = $('<button>').addClass('add-column').text('Add a column');
 			$boardDelete.click(function() {
         		self.removeBoard();
 			});
-			self.addBoard(prompt("Enter the name of the board"));
+			self.addBoard();
     		$boardAddColumn.click(function() {
         		self.addColumn(new Column(prompt("Enter the name of the column")));
 			});
@@ -35,8 +35,8 @@ $(function(){
 		removeBoard:function(){
 			this.$element.remove();
 		},
-		addBoard:function(name){
-			$('.board-container').children('div').append(board.$element);
+		addBoard:function(){
+			$('.board-container').append(this.$element);
 		},
 		initSortable:function(){
 			$('.column-card-list').sortable({
@@ -44,7 +44,7 @@ $(function(){
       		placeholder: 'card-placeholder'}).disableSelection();
 		},
 		addColumn:function(column){
-			this.$element.children('div').append(column.$element);
+			this.$element.append(column.$element);
 		}
 	}
     function Column(name) {
@@ -101,7 +101,12 @@ $(function(){
 			this.$element.remove();
 		}
 	}
-	$('.create-board').click(function(){
+	$('.add-board').click(function(){
+		var name = prompt('Enter a board name');
+		var board = new Board(name);
+		board.addBoard();
+	});
+	$('.create-column').click(function(){
 		var name = prompt('Enter a board name');
 		var board = new Board(name);
 		board.addBoard(board);
@@ -112,6 +117,7 @@ $(function(){
     	column.addColumn(column);
 	});
 	var firstBoard = new Board('Kanban');
+		firstBoard.addBoard(name);
 	// CREATING COLUMNS
 	var todoColumn = new Column('To do');
 	var doingColumn = new Column('Doing');
