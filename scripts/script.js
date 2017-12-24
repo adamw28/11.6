@@ -106,16 +106,6 @@ $(function(){
 		var board = new Board(name);
 		board.addBoard();
 	});
-	$('.create-column').click(function(){
-		var name = prompt('Enter a board name');
-		var board = new Board(name);
-		board.addBoard(board);
-	});
-	$('.boardAddColumn').click(function(){
-		var name = prompt('Enter a column name');
-		var column = new Column(name);
-    	column.addColumn(column);
-	});
 	var firstBoard = new Board('Kanban');
 		firstBoard.addBoard(name);
 	// CREATING COLUMNS
